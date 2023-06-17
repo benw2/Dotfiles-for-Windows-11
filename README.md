@@ -2,14 +2,14 @@
 
 Repeatable, reboot resilient Dotfiles script to setup a development environment in Microsoft Windows 11.
 
-> Now you create and run 🚀 Dotfiles projects for Windows 10/11 using this module for PowerShell: [PSWindowsDotfiles](https://github.com/JMOrbegoso/PSWindowsDotfiles)
+> Now you create and run 🚀 Dotfiles projects for Windows 10/11 using this module for PowerShell: [PSWindowsDotfiles](https://github.com/benw2/PSWindowsDotfiles)
 
 ## Usage
 
 Open any Windows PowerShell host console **(Except Windows Terminal)** with administrator rights and run:
 
 ```Powershell
-$GitHubRepositoryAuthor = "JMOrbegoso"; `
+$GitHubRepositoryAuthor = "benw2"; `
 $GitHubRepositoryName = "Dotfiles-for-Windows-11"; `
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; `
 Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${GitHubRepositoryAuthor}/${GitHubRepositoryName}/main/Download.ps1");
