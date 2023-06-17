@@ -35,16 +35,12 @@ function Install-VSCode-Extensions-In-WSL {
 
   wsl code --install-extension ue.alphabetical-sorter;
   wsl code --install-extension ms-azuretools.vscode-docker;
-  wsl code --install-extension dbaeumer.vscode-eslint;
   wsl code --install-extension eamodio.gitlens;
   wsl code --install-extension golang.go;
   wsl code --install-extension oderwat.indent-rainbow;
   wsl code --install-extension ritwickdey.liveserver;
   wsl code --install-extension davidanson.vscode-markdownlint;
   wsl code --install-extension esbenp.prettier-vscode;
-  wsl code --install-extension jock.svg;
-  wsl code --install-extension bradlc.vscode-tailwindcss;
-  wsl code --install-extension rangav.vscode-thunder-client;
 }
 
 function Install-Volta-In-Ubuntu {
@@ -242,35 +238,33 @@ function Set-Zsh-As-Default-In-Ubuntu {
   # Change just for a user: sudo chsh -s $WslZshPath $USER_NAME;
 }
 
-choco install -y "wsl2" --params "/Version:2 /Retry:true";
-choco install -y "wsl-ubuntu-2004" --params "/InstallRoot:true" --execution-timeout 3600;
+wsl --install -d Ubuntu-22.04
 
 Update-Ubuntu-Packages-Repository;
 Update-Ubuntu-Packages;
 
 Install-Ubuntu-Package -PackageName "curl";
-Install-Ubuntu-Package -PackageName "neofetch";
+Install-Ubuntu-Package -PackageName "ripgrep";
 Install-Ubuntu-Package -PackageName "git";
 Install-Ubuntu-Package -PackageName "vim";
 Install-Ubuntu-Package -PackageName "zsh";
 Install-Ubuntu-Package -PackageName "make";
-Install-Ubuntu-Package -PackageName "g++";
-Install-Ubuntu-Package -PackageName "gcc";
+Install-Ubuntu-Package -PackageName "bat";
 
 Set-Git-Configuration-In-Ubuntu;
 
 Install-VSCode-Extensions-In-WSL;
 
-Install-Volta-In-Ubuntu;
-Install-Nodejs-Packages-In-Ubuntu;
+# Install-Volta-In-Ubuntu;
+# Install-Nodejs-Packages-In-Ubuntu;
 
 Install-Golang-In-Ubuntu;
 Install-Hugo-In-Ubuntu;
 
-Install-Plug-Vim-In-Ubuntu;
-Copy-Initial-Vimrc-In-Ubuntu;
-Install-Vim-Plugins-In-Ubuntu;
-Copy-Final-Vimrc-In-Ubuntu;
+# Install-Plug-Vim-In-Ubuntu;
+# Copy-Initial-Vimrc-In-Ubuntu;
+# Install-Vim-Plugins-In-Ubuntu;
+# Copy-Final-Vimrc-In-Ubuntu;
 
 Install-OhMyZsh-In-Ubuntu;
 Install-OhMyZsh-Theme-In-Ubuntu;
