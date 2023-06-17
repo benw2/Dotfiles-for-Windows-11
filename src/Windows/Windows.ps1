@@ -39,6 +39,16 @@ function Set-Multitasking-Configuration {
   Write-Host "Multitasking successfully updated." -ForegroundColor "Green";
 }
 
+function Set-Window-Border-Configuration {
+  Write-Host "Configuring Windows Border Witdh for resizing:" -ForegroundColor "Green";
+  
+  $RegPath = "HKCU:\Control Panel\Desktop\WindowMetrics";
+
+  Set-ItemProperty -Path $RegPath -Name "BorderWidth" -Value -12;
+
+  Write-Host "Window Snap Settings successfully updated." -ForegroundColor "Green";
+}
+
 function Set-Classic-ContextMenu-Configuration {
   Write-Host "Activating classic Context Menu:" -ForegroundColor "Green";
 
@@ -147,7 +157,7 @@ function Rename-PC {
 
 Disable-WindowsFeature "WindowsMediaPlayer" "Windows Media Player";
 Disable-WindowsFeature "Internet-Explorer-Optional-amd64" "Internet Explorer";
-Disable-WindowsFeature "Printing-XPSServices-Features" "Microsoft XPS Document Writer";
+# Disable-WindowsFeature "Printing-XPSServices-Features" "Microsoft XPS Document Writer";
 Disable-WindowsFeature "WorkFolders-Client" "WorkFolders-Client";
 Enable-WindowsFeature "Containers-DisposableClientVM" "Windows Sandbox";
 
@@ -158,10 +168,11 @@ Uninstall-AppPackage "Microsoft.MicrosoftSolitaireCollection";
 
 Set-WindowsExplorer-ShowFileExtensions;
 Set-WindowsFileExplorer-StartFolder;
-Set-Multitasking-Configuration;
-Set-Classic-ContextMenu-Configuration;
+Set-Window-Border-Configuration;
+# Set-Multitasking-Configuration;
+# Set-Classic-ContextMenu-Configuration;
 Set-SetAsBackground-To-Extended-ContextMenu;
 Disable-RecentlyOpenedItems-From-JumpList;
-Set-Power-Configuration;
-Set-Custom-Regional-Format;
-Rename-PC;
+# Set-Power-Configuration;
+# Set-Custom-Regional-Format;
+# Rename-PC;
