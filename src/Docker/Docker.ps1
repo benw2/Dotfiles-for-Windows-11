@@ -1,1 +1,1 @@
-choco install -y "docker-desktop" --execution-timeout 3600;
+winget install --silent --accept-package-agreements --accept-source-agreements Docker.DockerDesktop;
