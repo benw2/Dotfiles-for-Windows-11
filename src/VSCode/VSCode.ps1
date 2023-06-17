@@ -10,7 +10,7 @@ function Set-VSCode-Configuration {
   Get-ChildItem -Path "${DotfilesVSCodeSettingsFolder}\*" -Include "*.json" -Recurse | Copy-Item -Destination $VSCodeSettingsPath;
 }
 
-winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode
+winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode;
 Set-VSCode-Configuration;
 refreshenv;
 code --install-extension "ue.alphabetical-sorter";
