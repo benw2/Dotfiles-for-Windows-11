@@ -10,9 +10,9 @@ Get-ChildItem -Path $Source -Include '*.ttf', '*.ttc', '*.otf' -Recurse | ForEac
     If (-not(Test-Path "C:\Windows\Fonts\$( $_.Name )"))
     {
         Write-Host Installing font  $($_.BaseName) For All User
-        $Font = "$TempFolder\$( $_.Name )"
-        Copy-Item $( $_.FullName ) -Destination $TempFolder
-        $Destination.CopyHere($Font, 0x10)
+
+        Copy-Item $( $_.FullName ) "C:\Windows\Fonts"
+        New-ItemProperty -Name $_.BaseName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $_.name 
     }
     else {
         Write-Host $($_.Name) already installed
