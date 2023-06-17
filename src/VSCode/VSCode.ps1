@@ -12,7 +12,9 @@ function Set-VSCode-Configuration {
 
 winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.VisualStudioCode;
 Set-VSCode-Configuration;
-refreshenv;
+
+Refresh-Path;
+
 code --install-extension "ue.alphabetical-sorter";
 code --install-extension "formulahendry.auto-rename-tag";
 code --install-extension "ms-azuretools.vscode-docker";

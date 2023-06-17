@@ -240,6 +240,8 @@ function Set-Zsh-As-Default-In-Ubuntu {
 
 wsl --install -d Ubuntu-22.04
 
+Refresh-Path;
+
 Update-Ubuntu-Packages-Repository;
 Update-Ubuntu-Packages;
 
@@ -259,7 +261,7 @@ Install-VSCode-Extensions-In-WSL;
 # Install-Nodejs-Packages-In-Ubuntu;
 
 Install-Golang-In-Ubuntu;
-Install-Hugo-In-Ubuntu;
+# Install-Hugo-In-Ubuntu;
 
 # Install-Plug-Vim-In-Ubuntu;
 # Copy-Initial-Vimrc-In-Ubuntu;
