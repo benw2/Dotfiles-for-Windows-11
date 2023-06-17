@@ -1,3 +1,3 @@
 Install-Module -Name WingetTools;
 Install-WinGet;
-winget upgrade --all --silent;
+# winget upgrade --all --silent;
