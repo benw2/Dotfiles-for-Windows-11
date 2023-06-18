@@ -1,7 +1,6 @@
 Write-Host "Installing fonts.."
 $Source = "*"
 $Destination = (New-Object -ComObject Shell.Application).Namespace(0x14)
-$TempFolder = "C:\Windows\Fonts"
 
 # New-Item $TempFolder -Type Directory -Force | Out-Null
 
@@ -11,8 +10,11 @@ Get-ChildItem -Path $Source -Include '*.ttf', '*.ttc', '*.otf' -Recurse | ForEac
     {
         Write-Host Installing font  $($_.BaseName) For All User
 
+        Get-ChildItem ($_.Name) | %{ $Destination.CopyHere($_.FullName)}
+
+        # Copy the font to the dir so we can test for it later and not install twice
         Copy-Item $( $_.FullName ) "C:\Windows\Fonts"
-        New-ItemProperty -Name $_.BaseName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $_.name 
+
     }
     else {
         Write-Host $($_.Name) already installed
