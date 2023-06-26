@@ -19,14 +19,10 @@ Invoke-Expression (Invoke-RestMethod -Uri "https://raw.githubusercontent.com/${G
 
 This dotfiles script does:
 
-- Install Chocolatey.
-- Configure Chocolatey to remember installation arguments for future updates.
-- Install Hack Nerd Font.
+- Install winget
+- Install MesloLGS Nerd Font.
 - Install Git.
 - Configure Git.
-- Install Vim.
-- Install Vim-Plug.
-- Install Vim plugins.
 - Install Visual Studio Code.
 - Configure Visual Studio Code.
 - Install Visual Studio Code extensions.
@@ -37,27 +33,12 @@ This dotfiles script does:
 - Configure PSWebSearch for PowerShell.
 - Configure PSReadLine for PowerShell.
 - Configure Windows Terminal.
-- Install Notepad++.
-- Configure Notepad++.
-- Install .NET SDK.
 - Enable Windows Subsystem for Linux.
 - Install Ubuntu 20.04 LTS in WSL.
   - Install curl.
-  - Install Neofetch.
   - Configure Git in Ubuntu.
   - Install Visual Studio Code extensions in Ubuntu.
-  - Install Volta in Ubuntu.
-    - Install Node.js LTS using Volta in Ubuntu.
-    - Install NPM using Volta in Ubuntu.
-    - Install Yarn using Volta in Ubuntu.
-    - Install TypeScript using Volta in Ubuntu.
-    - Install Yarn-Upgrade-All using Volta in Ubuntu.
-    - Install NestJS CLI using Volta in Ubuntu.
   - Install Golang in Ubuntu.
-  - Install HUGO in Ubuntu.
-  - Install Vim in Ubuntu.
-  - Install Vim-Plug in Ubuntu.
-  - Install Vim plugins in Ubuntu.
   - Install Zsh in Ubuntu.
   - Install Oh My Zsh in Ubuntu.
   - Install Zsh-Autosuggestions for Oh My Zsh in Ubuntu.
