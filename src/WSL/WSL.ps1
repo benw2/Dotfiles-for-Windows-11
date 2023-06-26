@@ -248,7 +248,7 @@ function Set-Zsh-As-Default-In-Ubuntu {
   # Change just for a user: sudo chsh -s $WslZshPath $USER_NAME;
 }
 
-wsl --install -d Ubuntu-22.04
+wsl --install Ubuntu-22.04
 
 Refresh-Path;
 

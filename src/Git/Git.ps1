@@ -7,4 +7,7 @@ function Set-Git-Configuration {
 }
 
 winget install --silent --accept-package-agreements --accept-source-agreements Git.Git;
+
+Refresh-Path;
+
 Set-Git-Configuration;
