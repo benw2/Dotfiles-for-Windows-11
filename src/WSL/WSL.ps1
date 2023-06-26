@@ -20,6 +20,16 @@ function Install-Ubuntu-Package {
   wsl sudo apt install --yes --no-install-recommends $PackageName;
 }
 
+function Set-Ubuntu-Sudo {
+  $DotfilesSudoPath = Join-Path -Path $DotfilesWorkFolder -ChildPath "WSL" | Join-Path -ChildPath "setup-sudo.sh";
+  $WslSudoPath = wsl wslpath $DotfilesSudoPath.Replace("\", "\\");
+
+  Write-Host "Configuring SUDO in Ubuntu:" -ForegroundColor "Green";
+  
+  wsl cp -R $WslSudoPath ~;
+  wsl sudo sh ~/setup-sudo.sh;
+}
+
 function Set-Git-Configuration-In-Ubuntu {
   Write-Host "Configuring Git in Ubuntu:" -ForegroundColor "Green";
   wsl git config --global init.defaultBranch "main";
@@ -241,6 +251,8 @@ function Set-Zsh-As-Default-In-Ubuntu {
 wsl --install -d Ubuntu-22.04
 
 Refresh-Path;
+
+Set-Ubuntu-Sudo;
 
 Update-Ubuntu-Packages-Repository;
 Update-Ubuntu-Packages;
